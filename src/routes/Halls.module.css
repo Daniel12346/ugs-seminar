@@ -1,0 +1,32 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  width: 100%;
+  max-height: 100vh;
+  padding: 1rem;
+}
+
+.halls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  width: 100%;
+  max-width: 30rem;
+}
+
+.hall {
+  display: flex;
+  padding: 0.5rem;
+  width: 100%;
+  border: 1px solid white;
+}
+
+.hall:hover {
+  background-color: darkslategray;
+  border-color: #646cff;
+  cursor: pointer;
+}
