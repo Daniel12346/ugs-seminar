@@ -1,15 +1,20 @@
 import { createBrowserRouter } from "react-router-dom";
 import Halls from "./routes/Halls";
-import HallAttendance from "./routes/HallAttendance";
+import LectureAttendance from "./routes/LectureAttendance";
+import Lectures from "./routes/Lectures";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Halls />,
+    element: <Lectures />,
   },
   {
-    path: "/prisutnost/:hallId",
-    element: <HallAttendance />,
+    path: "/prisutnost/:lectureId",
+    element: <LectureAttendance />,
+  },
+  {
+    path: "/prostorije",
+    element: <Halls />,
   },
 ]);
 

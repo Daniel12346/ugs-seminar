@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
-import { Database } from "../types/supabase";
+import { Tables } from "../types/supabase";
 import { supabase } from "../supabaseClient";
 import { useNavigate } from "react-router-dom";
 import styles from "./Halls.module.css";
 
 function Halls() {
-  const [halls, setHalls] =
-    useState<Database["public"]["Tables"]["hall"]["Row"][]>();
+  const [halls, setHalls] = useState<Tables<"hall">[]>();
   const navigate = useNavigate();
   useEffect(() => {
     const fetchhalls = async () => {
@@ -21,12 +20,13 @@ function Halls() {
   }, []);
   return (
     <div className={styles.container}>
+      <h2>Prostorije</h2>
       <ul className={styles.halls}>
         {halls?.map((hall) => (
           <li
-            className={styles.hall}
+            // className={styles.hall}
             key={hall.id}
-            onClick={() => navigate("/prisutnost/" + hall.id)}
+            // onClick={() => navigate("/prisutnost/" + hall.id)}
           >
             {hall?.name}
           </li>
