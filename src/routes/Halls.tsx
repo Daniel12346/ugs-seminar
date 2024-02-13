@@ -1,12 +1,10 @@
 import { useEffect, useState } from "react";
 import { Tables } from "../types/supabase";
 import { supabase } from "../supabaseClient";
-import { useNavigate } from "react-router-dom";
 import styles from "./Halls.module.css";
 
 function Halls() {
   const [halls, setHalls] = useState<Tables<"hall">[]>();
-  const navigate = useNavigate();
   useEffect(() => {
     const fetchhalls = async () => {
       const { data, error } = await supabase.from("hall").select("*");
